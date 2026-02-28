@@ -1,37 +1,61 @@
-# 🍅 Production-Grade Tomato Leaf Disease Classification Platform
+# 🍅 Tomato Leaf Disease Detection Platform
 
 ![Python](https://img.shields.io/badge/Python-3.9+-blue)
 ![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green)
-![YOLOv8](https://img.shields.io/badge/YOLOv8-DeepLearning-red)
-![Agriculture AI](https://img.shields.io/badge/Domain-Smart%20Agriculture-brightgreen)
+![YOLOv8](https://img.shields.io/badge/YOLOv8-ObjectDetection-red)
+![AI](https://img.shields.io/badge/AI-ComputerVision-orange)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
 ---
 
-## 🚜 Overview
+## 🚀 Overview
 
-A production-oriented computer vision platform for detecting tomato leaf diseases using deep learning.
+A production-oriented Computer Vision platform for detecting tomato leaf diseases using YOLOv8 and FastAPI.
 
-This system enables farmers, researchers, and agricultural engineers to upload tomato leaf images and instantly receive disease classification predictions with confidence scores.
+This project demonstrates real-world AI deployment principles including:
 
-The project demonstrates real-world AI deployment principles including:
+- Deep Learning model integration
+- REST API development
+- Clean project architecture
+- Scalable backend structure
+- Deployment-ready configuration
 
-- Clean architecture
-- Model separation
-- Inference pipeline design
-- REST API implementation
-- Deployment readiness
+The system allows users to upload a tomato leaf image and receive:
+
+- 🍅 Disease label
+- 📊 Confidence score
+- 📦 Bounding box visualization
 
 ---
 
-## 🎯 Key Features
+## 🧠 AI Model Details
 
-- 🍅 Multi-class tomato leaf disease classification
-- ⚡ Fast inference using YOLOv8
-- 🌐 Web-based user interface
-- 📦 Modular and scalable backend
-- 🧠 Production-ready architecture
-- 🐳 Docker support
+- Model Type: YOLOv8 Object Detection
+- Framework: PyTorch (Ultralytics)
+- Task: Tomato Leaf Disease Detection
+- Inference: CPU / GPU compatible
+- Output:
+  - Detected disease class
+  - Confidence percentage
+  - Bounding box overlay
+
+> Model weights are excluded due to size limitations.
+
+To run locally, place your trained model inside:
+
+```
+models/best.pt
+```
+
+---
+
+## 📸 Demo
+
+### 🖼 Original Image
+![Original](assets/original.png)
+
+### 🔍 Detection Result
+![Result](assets/result.png)
 
 ---
 
@@ -42,21 +66,21 @@ User Upload
     ↓
 FastAPI Backend
     ↓
-YOLOv8 Classification Model
+YOLOv8 Detection Model
     ↓
-Prediction + Confidence Score
+Bounding Box + Confidence
     ↓
-Web Interface Display
+Frontend Display
 ```
 
-This separation ensures scalability and maintainability.
+This modular design ensures scalability and maintainability.
 
 ---
 
 ## 📂 Project Structure
 
 ```
-tomato-disease-ai/
+tomato_disease_ai/
 │
 ├── app/
 │   ├── main.py          # FastAPI backend logic
@@ -65,11 +89,11 @@ tomato-disease-ai/
 ├── ui/
 │   └── index.html       # Frontend interface
 │
-├── assets/              # Demo images for README
+├── assets/              # README demo images
 │
 ├── models/              # Place best.pt here (excluded)
 │
-├── outputs/             # Runtime inference outputs
+├── outputs/             # Runtime inference outputs (ignored)
 │
 ├── requirements.txt
 ├── .gitignore
@@ -80,32 +104,13 @@ tomato-disease-ai/
 
 ---
 
-## 🧠 Model Information
-
-- Architecture: YOLOv8 Classification
-- Framework: PyTorch
-- Training Environment: Custom dataset (Tomato Leaf Diseases)
-- Inference Mode: CPU / GPU supported
-
-> Model weights are excluded due to size limitations.
-
-### 📥 Setup Model
-
-Place the trained model file as:
-
-```
-models/best.pt
-```
-
----
-
 ## ⚙️ Installation
 
 ### 1️⃣ Clone Repository
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/tomato-disease-ai.git
-cd tomato-disease-ai
+git clone https://github.com/Naderalshawki/tomato_disease_ai.git
+cd tomato_disease_ai
 ```
 
 ### 2️⃣ Install Dependencies
@@ -116,7 +121,7 @@ pip install -r requirements.txt
 
 ---
 
-## ▶️ Run Application
+## ▶️ Run Locally
 
 ```bash
 uvicorn app.main:app --reload
@@ -146,43 +151,29 @@ docker run -p 8000:8000 tomato-ai
 
 ---
 
-## 📊 Model Validation
+## 🔮 Future Enhancements
 
-The model was validated using YOLOv8 built-in evaluation pipeline during training.
-
-Detailed evaluation metrics are not included due to dataset constraints.
-
-Validation can be reproduced using:
-
-```python
-from ultralytics import YOLO
-
-model = YOLO("best.pt")
-model.val(data="data.yaml")
-```
+- 📱 Mobile integration
+- 🚁 Drone-based crop monitoring
+- 🌾 Smart agriculture dashboard
+- 📊 Disease severity estimation
+- 🧠 Edge AI deployment
 
 ---
 
-## 🚀 Future Enhancements
+## 👨‍💻 Author
 
-- Real-time mobile integration
-- Edge device deployment (Raspberry Pi / Jetson)
-- Drone-based crop monitoring
-- Agricultural analytics dashboard
-- Disease severity estimation
-
----
-
-## 🧑‍💻 Author
-
-**Nader Al shawki**  
+**Nader Al Shawki**  
 AI & Computer Vision Engineer  
 
 Specialized in:
-- Computer Vision
 - Deep Learning
+- Computer Vision
 - AI Deployment
 - Medical & Agricultural AI Systems
+
+GitHub:
+https://github.com/Naderalshawki
 
 ---
 
