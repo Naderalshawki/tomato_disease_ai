@@ -55,6 +55,8 @@ models/best.pt
 ![Original](assets/original.png)
 
 ### 🔍 Detection Result
+![Result](assets/result1.png)
+
 ![Result](assets/result.png)
 
 ---
