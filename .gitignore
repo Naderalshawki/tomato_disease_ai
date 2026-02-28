@@ -1,0 +1,5 @@
+models/*.pt
+outputs/
+runs/
+__pycache__/
+venv/
